@@ -128,29 +128,33 @@
     }
 
     .search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    gap: 10px; /* 增加输入框和按钮之间的间距 */
-  }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+      /* 增加输入框和按钮之间的间距 */
+    }
 
-  .search-container input {
-    width: 250px; /* 固定输入框宽度 */
-    padding: 8px; /* 增加输入框的内边距 */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-  }
+    .search-container input {
+      width: 250px;
+      /* 固定输入框宽度 */
+      padding: 8px;
+      /* 增加输入框的内边距 */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
 
-  .search-container button {
+    .search-container button {
       margin-top: 10px;
       padding: 5px 10px;
       background-color: #007bff;
       border: none;
       border-radius: 4px;
       color: white;
-      font-size: 12px; /* 将按钮大小缩小三分之一 */
+      font-size: 12px;
+      /* 将按钮大小缩小三分之一 */
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
@@ -159,16 +163,20 @@
       background-color: #0056b3;
     }
 
-     /* 上面的搜索框单独样式 */
-  .search-container:first-of-type input {
-    width: auto; /* 设置为自动宽度 */
-    padding: 5px 10px; /* 使其与按钮的内边距一致 */
-    font-size: 12px; /* 调整字体大小 */
-  }
+    /* 上面的搜索框单独样式 */
+    .search-container:first-of-type input {
+      width: auto;
+      /* 设置为自动宽度 */
+      padding: 5px 10px;
+      /* 使其与按钮的内边距一致 */
+      font-size: 12px;
+      /* 调整字体大小 */
+    }
 
-  .search-container:first-of-type button {
-    padding: 5px 10px; /* 与输入框保持一致 */
-  }
+    .search-container:first-of-type button {
+      padding: 5px 10px;
+      /* 与输入框保持一致 */
+    }
   </style>
 </head>
 
@@ -508,22 +516,23 @@
 
   <script>
 
-function searchTwitter() {
-    // 获取输入框中的昵称
-    var nickname = document.getElementById('nickname').value;
+    function searchTwitter() {
+      // 获取输入框中的昵称
+      var nickname = document.getElementById('nickname').value;
 
-    // 如果输入框为空，提醒用户
-    if (!nickname) {
-      alert("请输入一个昵称！");
-      return;
+      // 如果输入框为空，提醒用户
+      if (!nickname) {
+        alert("请输入一个昵称！");
+        return;
+      }
+
+      // 推特搜索的URL格式，使用 encodeURIComponent 来处理特殊字符
+      var url = 'twitter://search?query=' + encodeURIComponent(nickname) + '%20from:yulian_pw1%20OR%20from:yulian_milkcat';
+
+
+      // 跳转到生成的深度链接
+      window.location.href = url;
     }
-
-    // 推特搜索的URL格式，使用 encodeURIComponent 来处理特殊字符
-    var url = 'twitter://search?query=' + encodeURIComponent(nickname) + '%20from:yulian_pw1';
-
-    // 跳转到生成的深度链接
-    window.location.href = url;
-  }
 
     function toggleInfo() {
       var info = document.querySelector('.info');
